@@ -1,0 +1,36 @@
+// See https://aka.ms/vscode-remote/containers for the
+// documentation about the devcontainer.json format
+{
+    // [Optional] Your project name here
+    "name": "battlenet",
+
+    // The order of the files is important since later files override previous ones
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+
+    "service": "go",
+    "workspaceFolder": "/workspace",
+    "shutdownAction": "stopCompose",
+    "remoteUser": "vscode",
+
+    "extensions": [
+        "ms-vscode.go"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "go.gopath": "/go;/workspace",
+        "go.inferGopath": true,
+        "go.useLanguageServer": true,
+        "files.watcherExclude": {
+            "**/.git/objects/**": true,
+            "**/.git/subtree-cache/**": true,
+            "**/src/vendor/**": true,
+            "**/tmp/**": true
+        }
+    },
+
+    // [Optional] If you are using SSH keys w/Git, copy them and set correct permissions
+    // "postCreateCommand": "bash .devcontainer/init.sh"
+    "postCreateCommand": "go version"
+}

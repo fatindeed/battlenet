@@ -1,0 +1,27 @@
+version: '2'
+services:
+  go:
+    image: fatindeed/vscode-remote-go
+    environment:
+      TIMEZONE: Asia/Shanghai
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      # Mounts the project folder to '/workspace'. The target path inside the container
+      # should match what your application expects. In this case, the compose file is
+      # in a sub-folder, so we will mount '..'. We'll then reference this as the
+      # workspaceFolder in '.devcontainer/devcontainer.json' so VS Code starts here.
+      - ..:/workspace
+
+      # Mount your local home folder into a location inside the container.
+      # https://code.visualstudio.com/docs/remote/containers#_using-ssh-keys
+      - ${HOME}${USERPROFILE}:/host-home:ro
+
+      # Avoiding extension reinstalls on container rebuild
+      # https://code.visualstudio.com/docs/remote/containers-advanced#_avoiding-extension-reinstalls-on-container-rebuild
+      # - profile:/home/vscode/.vscode-server-insiders
+    command: ["sleep", "infinity"]
+# volumes:
+#   profile:
