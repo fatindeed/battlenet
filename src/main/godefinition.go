@@ -13,6 +13,7 @@ import (
 	"swaggerhub"
 
 	"gopkg.in/yaml.v3"
+	// https://github.com/go-swagger/go-swagger
 )
 
 func main() {

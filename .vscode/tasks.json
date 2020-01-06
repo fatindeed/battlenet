@@ -16,10 +16,7 @@
                     "GOPATH": "/go:${workspaceRoot}"
                 }
             },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "none",
             "problemMatcher": [
                 "$go"
             ]

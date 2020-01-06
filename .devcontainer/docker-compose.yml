@@ -21,7 +21,7 @@ services:
 
       # Avoiding extension reinstalls on container rebuild
       # https://code.visualstudio.com/docs/remote/containers-advanced#_avoiding-extension-reinstalls-on-container-rebuild
-      # - profile:/home/vscode/.vscode-server-insiders
+      - profile:/home/vscode/.vscode-server-insiders
     command: ["sleep", "infinity"]
-# volumes:
-#   profile:
+volumes:
+  profile:

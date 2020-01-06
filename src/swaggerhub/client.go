@@ -49,7 +49,7 @@ func SaveDefinition(owner string, api string, body []byte) error {
 	if err != nil {
 		return err
 	}
-	if code, ok := resp["code"]; ok && code.(float64) > 0 {
+	if code, ok := resp["code"].(float64); ok && code > 0 {
 		return fmt.Errorf("swaggerhub response error: %s", resp["message"])
 	}
 	return nil

@@ -19,7 +19,7 @@
     ],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
-        "go.gopath": "/go;/workspace",
+        "go.gopath": "/workspace:/go",
         "go.inferGopath": true,
         "go.useLanguageServer": true,
         "files.watcherExclude": {
