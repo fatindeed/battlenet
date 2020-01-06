@@ -1,0 +1,12 @@
+# https://docs.travis-ci.com/user/languages/go/
+language: go
+dist: bionic
+go:
+  - 1.13.x
+# https://app.swaggerhub.com/settings/apiKey
+# env:
+#   - SWAGGERHUB_API_KEY: "string"
+before_install:
+  - go get -v gopkg.in/yaml.v3
+script:
+  - go run src/main/godefinition.go

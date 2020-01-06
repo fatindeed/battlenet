@@ -19,7 +19,8 @@
     ],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
-        "go.gopath": "/workspace:/go",
+        "go.autocompleteUnimportedPackages": true,
+        "go.gopath": "/go",
         "go.inferGopath": true,
         "go.useLanguageServer": true,
         "files.watcherExclude": {
